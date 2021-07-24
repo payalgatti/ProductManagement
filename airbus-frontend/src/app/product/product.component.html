@@ -1,0 +1,47 @@
+
+  <div class="row margin">
+    <div class="form-group form-inline">
+      <form>
+      <h4>Filters - </h4>
+      <span class="spanMargin">
+        Select category here: 
+        <select id="categories" class="form-control" [(ngModel)]="selectedCategory" (change)="getProductsByCategory()">
+          <option selected></option>
+          <option *ngFor= "let cat of allCategories" [value]="cat"> {{cat}} </option>
+        </select>
+      </span>
+      <span class="spanMargin">
+        Full text search: <input class="form-control ml-2" type="text" (keyup.enter)="search($event)" [formControl]="filter"/>
+      </span>
+    </form>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="col-md-6">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Units</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.units}}</td>
+            <td><button class="btn btn-success" (click)=updateProduct(product)> >> </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="toggle">
+      <app-update-product [productForUpdate]="currentProduct"></app-update-product>
+    </div>
+  </div>

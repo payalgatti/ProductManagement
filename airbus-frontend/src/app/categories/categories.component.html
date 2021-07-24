@@ -1,0 +1,4 @@
+<select id="categories" class="form-control" #t (change)="getProductsByCategory(t.value)">
+  <option selected></option>
+  <option *ngFor= "let cat of allCategories" [value]="cat"> {{cat}} </option>
+</select>

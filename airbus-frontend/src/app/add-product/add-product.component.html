@@ -1,0 +1,33 @@
+<div id="addBlock" class="col-md-6">
+  <h2 class="text-center">Add Product</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="id">Id: </label>
+      <input type="text" [(ngModel)]="product.id" placeholder="Enter id" name="id" class="form-control" id="id"/>
+    </div>
+
+    <div class="form-group">
+      <label for="id">Category: </label>
+      <input type="text" [(ngModel)]="product.category" placeholder="Enter category" class="form-control" name="category" id="category">
+    </div>
+
+    <div class="form-group">
+      <label for="id">Name: </label>
+      <input type="text" [(ngModel)]="product.name" placeholder="Enter name" class="form-control" name="name" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="id">Description: </label>
+      <input type="text" [(ngModel)]="product.description" placeholder="Enter description" class="form-control" name="description" id="description">
+    </div>
+
+    <div class="form-group">
+      <label for="id">Units: </label>
+      <input type="number" [(ngModel)]="product.units" placeholder="Enter units" class="form-control" name="units" id="units">
+    </div>
+
+    <button class="btn btn-success" (click)="addProduct()">Add</button>
+  </form>
+  
+</div>

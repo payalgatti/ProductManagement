@@ -1,0 +1,14 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+  <div><a href="#" class="navbar-brand">Product Management</a></div>
+  
+  <ul class="navbar-nav">
+    <li><a *ngIf="usedIsLoggedIn" routerLink="/" class="nav-link">View All</a></li>
+    <li><a *ngIf="usedIsLoggedIn" routerLink="/add" class="nav-link">Add</a></li>
+    <li><a *ngIf="usedIsLoggedIn" routerLink="/logout" class="nav-link rightAlign"><div class="left">LogOut</div></a></li> 
+  
+  </ul>
+  
+  </nav>
+  
+  </header>
